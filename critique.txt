@@ -19,3 +19,6 @@ Currently, the script recreates the model instead of saving it for later predict
 ## Data Usage:
 As mentioned in my brief preface, it appears as though WorldOMeters SA COVID-19 data is no longer being updated. It would be beneficial to combine data from multiple sources, 
 as well as a measure of what proportion of cases may be inaccurately reported.
+
+# Finally, on the matter of the code
+Unfortunately, I was facing severe time pressures for this project - limited to 3-7pm on Saturday. The code could do with being combed over. I am, as always, happy to discuss.
