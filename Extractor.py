@@ -4,28 +4,28 @@ class Extractor:
 
     # This method locates the start and end of generic data in a page given a starting keyword
     # A specifier for start and end brackets of the data could be added
-    def __FindData(self, keyword, data):
-        sectionIndex = data.find(keyword)
-        dataStart = data.find("[", sectionIndex) + 1
-        dataEnd = data.find("]", dataStart)
+    def __find_data(self, keyword, data):
+        section_index = data.find(keyword)
+        data_start = data.find("[", section_index) + 1
+        data_end = data.find("]", data_start)
 
-        return data[dataStart:dataEnd]
+        return data[data_start:data_end]
 
-    def Extract(self, xAxisKeyword, yAxisKeyword, data):
+    def extract(self, x_axis_keyword, y_axis_keyword, data):
 
-        xAxis = self.__FindData(xAxisKeyword, data)
-        yAxis = self.__FindData(yAxisKeyword, data)
+        x = self.__find_data(x_axis_keyword, data)
+        y = self.__find_data(y_axis_keyword, data)
 
         #Process string-bound data
-        xAxis = xAxis.split('","')
-        xAxis[0]  = xAxis[0].replace("\"","")
-        xAxis[len(xAxis)-1] = xAxis[len(xAxis)-1].replace("\"","")
+        x = x.split('","')
+        x[0]  = x[0].replace("\"","")
+        x[len(x)-1] = x[len(x)-1].replace("\"","")
 
         #Process integer-bound data
-        yAxis = yAxis.replace("null", "0")
-        yAxis = yAxis.split(',')
-        yAxis = [eval(value) for value in yAxis]
+        y = y.replace("null", "0")
+        y = y.split(',')
+        y = [eval(value) for value in y]
 
-        xAxis = [datetime.strptime(date, '%b %d, %Y').date() for date in xAxis]
+        x = [datetime.strptime(date, '%b %d, %Y').date() for date in x]
 
-        return xAxis, yAxis
+        return x, y
