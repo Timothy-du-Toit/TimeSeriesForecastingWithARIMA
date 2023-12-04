@@ -1,0 +1,21 @@
+# A starting note before the critique:
+
+It appears as though new SA  COVID-19 cases are no longer being recorded on WorldOMeters] https://www.worldometers.info/coronavirus/country/south-africa/). 
+As such, for the past while, the daily increase in the number of cases has been set to 0. 
+You can exclude this when running my script by modifying the `exclude_days` value in `main.py`. 
+I recommend `exclude_days = 400` to better demonstrate the predictive capabilities of this model
+
+# Critique:
+## The Model Itself
+
+The ARIMA model benefits from careful selection of its three key parameters (p,d,q). These are currently set to (3,1,0) in the code.
+These parameters can be set using a broad collection of analytical processes - both qualitative and quantitative.
+In assessing the COVID-19 dataset, I identified that the model would benefit from a lagged viewing window of 3 observations (p=3) and a difference order of 1 (d=1).
+However, too late to implement, I came across an alternative assessment approach that indicated that a window of 5 observations (p=5) would result in a smaller RMSE/overall error. 
+It would be worth reviewing in future, given more time, if this would indeed result in a significant improvement. 
+## Performance
+Currently, the script recreates the model instead of saving it for later prediction use. This slows down future-reaching predictions as the model needs to be recreated. 
+
+## Data Usage:
+As mentioned in my brief preface, it appears as though WorldOMeters SA COVID-19 data is no longer being updated. It would be beneficial to combine data from multiple sources, 
+as well as a measure of what proportion of cases may be inaccurately reported.

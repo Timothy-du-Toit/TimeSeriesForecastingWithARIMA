@@ -23,7 +23,7 @@ y = data[1][0: len(data[1]) - exclude_days]
 
 # ARIMA Model Settings
 settings = (3,1,0)
-percentage_training = 0.40
+percentage_training = 0.50
 
 #Set up forecasting period
 forecast_days = 7
