@@ -29,5 +29,3 @@ The requested output .csv and .png will be placed into the parent folder.
 # Cheers
 Feel free to reach out to me at:
 1. LinkedIn: www.linkedin.com/in/timothy-dt
-2. Email: timothydt08@gmail.com
-3. WhatsApp: 083 397 1612
