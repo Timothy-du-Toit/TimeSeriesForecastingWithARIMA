@@ -1,11 +1,10 @@
-import Scraper
+import scraper
 import matplotlib.pyplot as plt 
 
-scraper = Scraper.Scraper()
-date, newCases = scraper.ScrapeData()
+date, new_cases = scraper.scrape_data()
 
 print("data received") 
-plt.plot(date, newCases) 
+plt.plot(date, new_cases) 
 plt.xlabel('Date') 
 plt.ylabel('Number of cases') 
 plt.title('Total Covid Cases') 
